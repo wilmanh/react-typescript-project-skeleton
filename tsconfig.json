@@ -9,8 +9,24 @@
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
+    "sourceMap": true,
+    "types": [
+      "react",
+      "jest",
+      "@types/jest",
+      "node"
+    ],
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "typeRoots": [
+      "../node_modules/@types"
+    ],
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
@@ -20,6 +36,16 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
+  "exclude": [
+    "client",
+    "node_modules",
+    "typings/browser",
+    "typings/browser.d.ts"
+  ],
+  "files": [
+    "./src/utils/typings/custom.d.ts",
+    "node_modules/@types/node/globals.d.ts"
+  ],
   "include": [
     "src"
   ]

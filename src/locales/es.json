@@ -1,0 +1,19 @@
+{
+  "title": "my react typescript template",
+  "validate": {
+    "max": "ha excedido el monto máximo",
+    "maxLength": "ha excedido la cantidad de carácteres permitida",
+    "min": "no ha llegado al monto mínimo",
+    "minLength": "no ha llegado a la cantidad de carácteres mínima",
+    "isRequired": "este campo es requerido",
+    "isMail": "digite un correo válido",
+    "isUrl": "digite una url válida",
+    "isOnlyNumbers": "solo se permiten números",
+    "isOnlyNumbersWithDecimals": "solo se permiten números",
+    "isOnlyString": "solo se permiten letras",
+    "checkbox": "debes seleccionar esta opción para seguir"
+  },
+  "select": {
+    "placeholder": "Seleccione..."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "title": "my react typescript template",
+  "validate": {
+    "max": "you have exceeded the allowed number of characters,",
+    "maxLength": "you have exceeded the allowed number of characters",
+    "min": "has not reached the minimum amount",
+    "minLength": "has not reached the minimum number of characters",
+    "isRequired": "This field is required",
+    "isMail": "enter a valid email",
+    "isUrl": "enter a valid url",
+    "isOnlyNumbers": "only numbers are allowed",
+    "isOnlyNumbersWithDecimals": "only numbers are allowed",
+    "isOnlyString": "only letters are allowed",
+    "checkbox": "you must select this option to continue"
+  },
+  "select": {
+    "placeholder": "Select..."
+  }
+}

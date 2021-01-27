@@ -43,4 +43,40 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
+## Added Packages
+
+### `npm install --save react-redux`
+
+### `npm install --dev @types/react`
+
+### `npm install --save react-router-dom`
+
+### `npm install @types/react-router-dom`
+
+### `npm install --save redux-thunk`
+
+### `npm install --save axios`
+
+### `npm install --save react-i18next i18next`
+
+### `npm install --save moment react-moment`
+
+### `npm i -S decko`
+
+### `npm i cross-env`
+
+### `npm install bulma`
+
+### `npm install enzyme @types/enzyme enzyme-to-json -D`
+
+### `npm install --save-dev @wojtekmaj/enzyme-adapter-react-17 --legacy-peer-deps`
+
+### `npm install ts-jest -D`
+
+### `npm intall --save redux utility-types @types/react-redux redux-axios-middleware redux-persist redux-persist-cookie-storage`
+
+### `npm install react-icons --save`
+
+### `npm install node-sass@4.14.1`
+
 To learn React, check out the [React documentation](https://reactjs.org/).
