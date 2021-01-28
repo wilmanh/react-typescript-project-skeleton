@@ -1,23 +1,61 @@
 import React from "react";
-interface NavBarProps {
-  className?: string;
-}
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import NavBarProps, { MenuOption } from "./navBar.interface";
+
 const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
-  const { className } = props;
+  const { t } = useTranslation();
+  const { title, hasLogin, hasSignUp, options, imageUrl } = props;
+
+  const getOptions = (options: MenuOption[]): JSX.Element[] => {
+    return options?.map(
+      (item: MenuOption, index: number): JSX.Element => {
+        if (item.options) {
+          const subOptions = getOptions(item.options);
+          const menu = (
+            <>
+              <div
+                key={`option-${item.name}-${index}`}
+                className="navbar-item has-dropdown is-hoverable"
+              >
+                <div className="navbar-link">{item.name}</div>
+                <div className="navbar-dropdown">{subOptions}</div>
+              </div>
+            </>
+          );
+          return menu;
+        } else {
+          return (
+            <>
+              <Link
+                key={`option-${item.name}-${index}`}
+                to={item?.toUrl ? item.toUrl : ""}
+                className="navbar-item"
+              >
+                {item.name}
+              </Link>
+              {item.hasDivider && <hr className="navbar-divider" />}
+            </>
+          );
+        }
+      }
+    );
+  };
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
-        <a className="navbar-item" href="https://bulma.io">
-          <img
-            src="https://bulma.io/images/bulma-logo.png"
-            width="112"
-            height="28"
-            alt="img"
-          />
+        <a
+          className="navbar-item"
+          href="https://github.com/wilmanh/react-typescript-project-skeleton"
+        >
+          {title && (
+            <span className="tag is-primary is-light is-large">{title}</span>
+          )}
+          {imageUrl && <img src={imageUrl} width="112" height="28" alt="img" />}
         </a>
 
-        <a
-          role="button"
+        <button
+          type="button"
           className="navbar-burger"
           aria-label="menu"
           aria-expanded="false"
@@ -26,35 +64,23 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
-        </a>
+        </button>
       </div>
 
       <div id="navbarBasicExample" className="navbar-menu">
-        <div className="navbar-start">
-          <a className="navbar-item">Home</a>
-
-          <a className="navbar-item">Documentation</a>
-
-          <div className="navbar-item has-dropdown is-hoverable">
-            <a className="navbar-link">More</a>
-
-            <div className="navbar-dropdown">
-              <a className="navbar-item">About</a>
-              <a className="navbar-item">Jobs</a>
-              <a className="navbar-item">Contact</a>
-              <hr className="navbar-divider" />
-              <a className="navbar-item">Report an issue</a>
-            </div>
-          </div>
-        </div>
+        <div className="navbar-start">{getOptions(options)}</div>
 
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              <a className="button is-primary">
-                <strong>Sign up</strong>
-              </a>
-              <a className="button is-light">Log in</a>
+              {hasSignUp && (
+                <button className="button is-primary">
+                  <strong>{t("signUp")}</strong>
+                </button>
+              )}
+              {hasLogin && (
+                <button className="button is-light">{t("logIn")}</button>
+              )}
             </div>
           </div>
         </div>

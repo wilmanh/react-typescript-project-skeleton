@@ -5,10 +5,14 @@ import { AnyAction } from "redux";
 import { ThunkDispatch } from "redux-thunk";
 import { Diff } from "utility-types";
 import * as actions from "../../store/actions/";
-import { RouteComponentProps } from "react-router-dom";
+import { RouteComponentProps, withRouter } from "react-router-dom";
 import { RootState } from "../../store/reducers";
 import Action from "../../interfaces/actions.interface";
 import NavBar from "../../components/UI/NavBar/navBar.component";
+import Footer from "../../components/UI/Footer/footer.component";
+import { MenuOption } from "../../components/UI/NavBar/navBar.interface";
+import { withTranslation, WithTranslation } from "react-i18next";
+import parse from "html-react-parser";
 
 const mapStateToProps = (state: RootState) => ({});
 
@@ -26,22 +30,41 @@ type HocProps = ReturnType<typeof mapStateToProps> &
     overrideCount?: number;
   };
 
-interface Hocstate {
-  rtl: boolean;
-  toggled: boolean;
-  collapsed: boolean;
-}
 // These props will be injected into the base component
 export const withPublicArea = <BaseProps extends {}>(
   BaseComponent: ComponentType<BaseProps>
 ) => {
-  class Hoc extends Component<HocProps & RouteComponentProps<{}>, Hocstate> {
+  class Hoc extends Component<
+    HocProps & WithTranslation & RouteComponentProps<{}>,
+    {}
+  > {
     // Enhance component name for debugging and React-Dev-Tools
     state = {
       rtl: false,
       toggled: false,
       collapsed: false,
     };
+
+    static options: MenuOption[] = [
+      {
+        name: "Home",
+        toUrl: "/",
+      },
+      {
+        name: "Component",
+        options: [
+          {
+            name: "Buttons",
+            toUrl: "/button",
+            hasDivider: true,
+          },
+          {
+            name: "Inputs",
+            toUrl: "/input",
+          },
+        ],
+      },
+    ];
     static displayName = `withConnectedCount(${BaseComponent.name})`;
     // reference to original wrapped component
     static readonly WrappedComponent = BaseComponent;
@@ -61,16 +84,25 @@ export const withPublicArea = <BaseProps extends {}>(
     };
 
     render(): JSX.Element {
-      const { overrideCount, children } = this.props;
+      const { overrideCount, children, t } = this.props;
 
       return (
         <div className="app">
-          <NavBar className="nevermind" key="navbar" />
+          <NavBar
+            title="Sirius"
+            hasLogin={true}
+            hasSignUp={true}
+            options={Hoc.options}
+            key="navbar"
+          />
           <BaseComponent
             login={this.login}
             overrideCount={overrideCount} // injected
             {...(children as BaseProps)}
           />
+          <Footer>
+            <p>{parse(t("footerText"))}</p>
+          </Footer>
         </div>
       );
     }
@@ -86,7 +118,7 @@ export const withPublicArea = <BaseProps extends {}>(
     mapDispatchToProps
   )(Hoc);
 
-  return ConnectedHoc;
+  return withRouter(withTranslation()(ConnectedHoc));
 };
 
 export default withPublicArea;

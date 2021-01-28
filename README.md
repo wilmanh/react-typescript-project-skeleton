@@ -79,4 +79,6 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 ### `npm install node-sass@4.14.1`
 
+### `npm install html-react-parser`
+
 To learn React, check out the [React documentation](https://reactjs.org/).

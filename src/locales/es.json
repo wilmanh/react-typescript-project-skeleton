@@ -1,5 +1,9 @@
 {
-  "title": "my react typescript template",
+  "title": "React typescript redux bulma skeleton",
+  "subTitle": "my template to work",
+  "footerText": "<strong>Skeleton template</strong> by Sirius.",
+  "logIn": "Log in",
+  "signUp": "Sign up",
   "validate": {
     "max": "ha excedido el monto máximo",
     "maxLength": "ha excedido la cantidad de carácteres permitida",

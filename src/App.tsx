@@ -55,6 +55,7 @@ const App = (): JSX.Element => (
       <BrowserRouter basename={Config.PUBLIC_PATH}>
         <Switch>
           <Route exact path="/" component={Routes.Component} />
+          <Route exact path="/button" component={Routes.Button} />
         </Switch>
       </BrowserRouter>
     </PersistGate>
