@@ -61,6 +61,21 @@ export const withPublicArea = <BaseProps extends {}>(
           {
             name: "Inputs",
             toUrl: "/input",
+            hasDivider: true,
+          },
+          {
+            name: "Select",
+            toUrl: "/select",
+            hasDivider: true,
+          },
+          {
+            name: "Checkbox",
+            toUrl: "/checkbox",
+            hasDivider: true,
+          },
+          {
+            name: "TextArea",
+            toUrl: "/textarea",
           },
         ],
       },
@@ -90,8 +105,8 @@ export const withPublicArea = <BaseProps extends {}>(
         <div className="app">
           <NavBar
             title="Sirius"
-            hasLogin={true}
-            hasSignUp={true}
+            hasLogin={false}
+            hasSignUp={false}
             options={Hoc.options}
             key="navbar"
           />

@@ -1,6 +1,15 @@
 import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
-import Button from "../../components/Button/button.component";
+import {
+  FaBeer,
+  FaAddressBook,
+  FaPhoenixSquadron,
+  FaCentercode,
+  FaAlignCenter,
+  FaAlignJustify,
+  FaAlignRight,
+} from "react-icons/fa";
+
+import Button from "../../components/UI/Button/button.component";
 import withPublicArea from "../../hocs/PublicArea/publicArea.hoc";
 import Frame from "react-frame-component";
 
@@ -8,7 +17,6 @@ interface ComponentProps {
   someProps: boolean;
 }
 const ComponentsPage: React.FC<ComponentProps> = (props: ComponentProps) => {
-  const { t } = useTranslation();
   const [normalButton, setNormalButton] = useState("Click me");
   return (
     <section className="section">
@@ -34,11 +42,11 @@ const ComponentsPage: React.FC<ComponentProps> = (props: ComponentProps) => {
               height="100%"
               initialContent="<!DOCTYPE html><html><head></head><body><script src='https://gist.github.com/wilmanh/dbdcb2f25bf6719b17deb2fe4901e0c1.js'></script></body></html>"
             >
-              a
+              <div></div>
             </Frame>
           </div>
         </div>
-        <div className="container">
+        <div className="section container">
           <h2 className="subtitle">Color buttons</h2>
           <div className="columns">
             <div className="column has-text-centered">
@@ -221,12 +229,12 @@ const ComponentsPage: React.FC<ComponentProps> = (props: ComponentProps) => {
               height="100%"
               initialContent="<!DOCTYPE html><html><head></head><body><script src='https://gist.github.com/wilmanh/5457d78b397fd2c0d6ac71cd73a1ab95.js'></script></body></html>"
             >
-              a
+              <div></div>
             </Frame>
           </div>
         </div>
 
-        <div className="container">
+        <div className="section container">
           <h2 className="subtitle">Size buttons</h2>
           <div className="columns">
             <div className="column has-text-centered">
@@ -284,12 +292,69 @@ const ComponentsPage: React.FC<ComponentProps> = (props: ComponentProps) => {
               height="100%"
               initialContent="<!DOCTYPE html><html><head></head><body><script src='https://gist.github.com/wilmanh/741cc7a7e54e8a5573e910fe2d1b0c09.js'></script></body></html>"
             >
-              a
+              <div></div>
             </Frame>
           </div>
         </div>
 
-        <div className="container">
+        <div className="section container">
+          <h2 className="subtitle">Icon buttons</h2>
+          <div className="columns">
+            <div className="column has-text-centered">
+              <div className="buttons has-text-centered">
+                <Button
+                  Icon={FaBeer}
+                  value={"is-small"}
+                  iconSize="is-large"
+                  size="is-large"
+                  color="is-primary"
+                  iconOnly={true}
+                  onClickHandler={(event) => {
+                    event.preventDefault();
+                    setNormalButton("Clicked");
+                  }}
+                  type="button"
+                ></Button>
+                <Button
+                  Icon={FaAddressBook}
+                  value={"icon"}
+                  iconSize="is-large"
+                  size="is-large"
+                  color="is-danger"
+                  onClickHandler={(event) => {
+                    event.preventDefault();
+                    setNormalButton("Clicked");
+                  }}
+                  type="button"
+                ></Button>
+                <Button
+                  Icon={FaPhoenixSquadron}
+                  value={"icon"}
+                  iconSize="is-large"
+                  iconRight={true}
+                  size="is-large"
+                  color="is-danger"
+                  onClickHandler={(event) => {
+                    event.preventDefault();
+                    setNormalButton("Clicked");
+                  }}
+                  type="button"
+                ></Button>
+              </div>
+            </div>
+          </div>
+          <div style={{ height: "250px" }} className="container">
+            <Frame
+              width="100%"
+              height="100%"
+              initialContent="<!DOCTYPE html><html><head></head><body><script src='https://gist.github.com/wilmanh/f8cb6aaa67ae64ad6f9bc0e7e0d8e6cd.js'></script></body></html>"
+            >
+              <div></div>
+            </Frame>
+          </div>
+        </div>
+
+        <div className="section container">
           <h2 className="subtitle">Displays</h2>
           <div className="columns">
             <div className="column has-text-centered">
@@ -352,12 +417,12 @@ const ComponentsPage: React.FC<ComponentProps> = (props: ComponentProps) => {
               height="100%"
               initialContent="<!DOCTYPE html><html><head></head><body><script src='https://gist.github.com/wilmanh/96667baedfe089d2f9f1df465d5439d4.js'></script></body></html>"
             >
-              a
+              <div></div>
             </Frame>
           </div>
         </div>
 
-        <div className="container">
+        <div className="section container">
           <h2 className="subtitle">Outlined</h2>
           <div className="columns">
             <div className="column has-text-centered">
@@ -430,12 +495,12 @@ const ComponentsPage: React.FC<ComponentProps> = (props: ComponentProps) => {
               height="100%"
               initialContent="<!DOCTYPE html><html><head></head><body><script src='https://gist.github.com/wilmanh/06d4e53e13c1455d990a5fd7cdc12188.js'></script></body></html>"
             >
-              a
+              <div></div>
             </Frame>
           </div>
         </div>
 
-        <div className="container">
+        <div className="section container">
           <h2 className="subtitle">Inverted</h2>
           <div className="columns">
             <div className="column has-background-primary	 is-primary has-text-centered">
@@ -508,11 +573,11 @@ const ComponentsPage: React.FC<ComponentProps> = (props: ComponentProps) => {
               height="100%"
               initialContent="<!DOCTYPE html><html><head></head><body><script src='https://gist.github.com/wilmanh/1dc4b3dcb096f2c63bd49688cda657d1.js'></script></body></html>"
             >
-              a
+              <div></div>
             </Frame>
           </div>
         </div>
-        <div className="container">
+        <div className="section container">
           <h2 className="subtitle">Inverted outlined</h2>
           <div className="columns">
             <div className="column has-background-primary	 has-text-centered">
@@ -591,12 +656,12 @@ const ComponentsPage: React.FC<ComponentProps> = (props: ComponentProps) => {
               height="100%"
               initialContent="<!DOCTYPE html><html><head></head><body><script src='https://gist.github.com/wilmanh/9801ecd23221746301837d6562767429.js'></script></body></html>"
             >
-              a
+              <div></div>
             </Frame>
           </div>
         </div>
 
-        <div className="container">
+        <div className="section container">
           <h2 className="subtitle">Rounded</h2>
           <div className="columns">
             <div className="column is-primary has-text-centered">
@@ -669,12 +734,12 @@ const ComponentsPage: React.FC<ComponentProps> = (props: ComponentProps) => {
               height="100%"
               initialContent="<!DOCTYPE html><html><head></head><body><script src='https://gist.github.com/wilmanh/a5d70c30c8625c1f614db8286e13db2a.js'></script></body></html>"
             >
-              a
+              <div></div>
             </Frame>
           </div>
         </div>
 
-        <div className="container">
+        <div className="section container">
           <h2 className="subtitle">State (Hover, Focus, Active, Loading)</h2>
           <div className="columns">
             <div className="column is-primary has-text-centered">
@@ -743,7 +808,70 @@ const ComponentsPage: React.FC<ComponentProps> = (props: ComponentProps) => {
               height="100%"
               initialContent="<!DOCTYPE html><html><head></head><body><script src='https://gist.github.com/wilmanh/2ced55a0ab1b9e742e538117bd5bfae8.js'></script></body></html>"
             >
-              a
+              <div></div>
+            </Frame>
+          </div>
+        </div>
+
+        <div className="section container">
+          <h2 className="subtitle">Addons</h2>
+          <div className="columns">
+            <div className="column is-primary has-text-centered">
+              <div className="field has-addons">
+                <p className="control">
+                  <Button
+                    Icon={FaCentercode}
+                    value={"addons"}
+                    onClickHandler={(event) => {
+                      event.preventDefault();
+                      setNormalButton("Clicked");
+                    }}
+                    type="button"
+                  ></Button>
+                </p>
+                <p className="control">
+                  <Button
+                    Icon={FaAlignRight}
+                    value={"addons"}
+                    onClickHandler={(event) => {
+                      event.preventDefault();
+                      setNormalButton("Clicked");
+                    }}
+                    type="button"
+                  ></Button>
+                </p>
+                <p className="control">
+                  <Button
+                    Icon={FaAlignCenter}
+                    value={"addons"}
+                    onClickHandler={(event) => {
+                      event.preventDefault();
+                      setNormalButton("Clicked");
+                    }}
+                    type="button"
+                  ></Button>
+                </p>
+                <p className="control">
+                  <Button
+                    Icon={FaAlignJustify}
+                    value={"addons"}
+                    onClickHandler={(event) => {
+                      event.preventDefault();
+                      setNormalButton("Clicked");
+                    }}
+                    type="button"
+                  ></Button>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div style={{ height: "250px" }} className="container">
+            <Frame
+              width="100%"
+              height="100%"
+              initialContent="<!DOCTYPE html><html><head></head><body><script src='https://gist.github.com/wilmanh/2ced55a0ab1b9e742e538117bd5bfae8.js'></script></body></html>"
+            >
+              <div></div>
             </Frame>
           </div>
         </div>

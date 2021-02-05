@@ -13,29 +13,28 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
         if (item.options) {
           const subOptions = getOptions(item.options);
           const menu = (
-            <>
-              <div
-                key={`option-${item.name}-${index}`}
-                className="navbar-item has-dropdown is-hoverable"
-              >
-                <div className="navbar-link">{item.name}</div>
-                <div className="navbar-dropdown">{subOptions}</div>
-              </div>
-            </>
+            <div
+              key={`option-${item.name}-${index}`}
+              className="navbar-item has-dropdown is-hoverable"
+            >
+              <div className="navbar-link">{item.name}</div>
+              <div className="navbar-dropdown">{subOptions}</div>
+            </div>
           );
           return menu;
         } else {
           return (
-            <>
-              <Link
-                key={`option-${item.name}-${index}`}
-                to={item?.toUrl ? item.toUrl : ""}
-                className="navbar-item"
-              >
+            <React.Fragment key={`option-${item.name}-${index}`}>
+              <Link to={item?.toUrl ? item.toUrl : ""} className="navbar-item">
                 {item.name}
               </Link>
-              {item.hasDivider && <hr className="navbar-divider" />}
-            </>
+              {item.hasDivider && (
+                <hr
+                  key={`divider-${item.name}-${index}`}
+                  className="navbar-divider"
+                />
+              )}
+            </React.Fragment>
           );
         }
       }

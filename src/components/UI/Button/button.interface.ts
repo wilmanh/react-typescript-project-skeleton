@@ -1,8 +1,15 @@
+import { IconType } from "react-icons/lib";
+
 export default interface ButtonProps {
   value: string;
   className?: string[];
-  type?: string;
-  icon?: string;
+  type?: "button" | "submit" | "reset";
+  Icon?: IconType;
+  iconSize?: "is-small" | "is-normal" | "is-medium" | "is-large";
+  iconRight?: Boolean;
+  iconOnly?: Boolean;
+  ariaHaspopup?: boolean;
+  ariaControls?: string;
   color?:
     | "is-white"
     | "is-dark"

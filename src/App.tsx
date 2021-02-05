@@ -56,6 +56,10 @@ const App = (): JSX.Element => (
         <Switch>
           <Route exact path="/" component={Routes.Component} />
           <Route exact path="/button" component={Routes.Button} />
+          <Route exact path="/input" component={Routes.Input} />
+          <Route exact path="/textarea" component={Routes.TextArea} />
+          <Route exact path="/select" component={Routes.Select} />
+          <Route exact path="/checkbox" component={Routes.Checkbox} />
         </Switch>
       </BrowserRouter>
     </PersistGate>
