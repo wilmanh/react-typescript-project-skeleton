@@ -3,6 +3,7 @@ import { IconType } from "react-icons/lib";
 export default interface CheckboxProps {
   checked: boolean;
   placeHolder?: string;
+  name: string;
   color?:
     | "is-primary"
     | "is-link"

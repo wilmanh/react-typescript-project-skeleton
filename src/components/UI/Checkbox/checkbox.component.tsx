@@ -2,7 +2,16 @@ import React from "react";
 import CheckboxProps from "./checkbox.interface";
 
 const Checkbox: React.FC<CheckboxProps> = (props: CheckboxProps) => {
-  const { color, size, loading, onChangeHandler, ...otherProps } = props;
+  const {
+    color,
+    size,
+    loading,
+    name,
+    placeHolder,
+    onChangeHandler,
+    checked,
+    ...otherProps
+  } = props;
   const styles: string[] = ["checkbox"];
 
   if (color) {
@@ -16,11 +25,14 @@ const Checkbox: React.FC<CheckboxProps> = (props: CheckboxProps) => {
     <div className="field">
       <label className="checkbox">
         <input
+          id={`checbox${name}`}
+          defaultChecked={checked}
           onChange={onChangeHandler}
           className={styles.join(" ")}
           type="checkbox"
           {...otherProps}
-        />
+        />{" "}
+        {placeHolder}
       </label>
     </div>
   );

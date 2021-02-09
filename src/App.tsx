@@ -59,7 +59,9 @@ const App = (): JSX.Element => (
           <Route exact path="/input" component={Routes.Input} />
           <Route exact path="/textarea" component={Routes.TextArea} />
           <Route exact path="/select" component={Routes.Select} />
+          <Route exact path="/radio" component={Routes.Radio} />
           <Route exact path="/checkbox" component={Routes.Checkbox} />
+          <Route exact path="/upload" component={Routes.Upload} />
         </Switch>
       </BrowserRouter>
     </PersistGate>

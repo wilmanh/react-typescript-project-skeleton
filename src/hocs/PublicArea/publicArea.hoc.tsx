@@ -74,6 +74,16 @@ export const withPublicArea = <BaseProps extends {}>(
             hasDivider: true,
           },
           {
+            name: "Radio",
+            toUrl: "/radio",
+            hasDivider: true,
+          },
+          {
+            name: "File upload",
+            toUrl: "/upload",
+            hasDivider: true,
+          },
+          {
             name: "TextArea",
             toUrl: "/textarea",
           },

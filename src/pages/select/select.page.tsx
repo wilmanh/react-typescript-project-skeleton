@@ -7,7 +7,7 @@ import Option from "../../interfaces/utils.interface";
 interface ComponentProps {
   someProps: boolean;
 }
-const CheckboxPage: React.FC<ComponentProps> = (props: ComponentProps) => {
+const SelectPage: React.FC<ComponentProps> = (props: ComponentProps) => {
   const [normalButton, setNormalButton] = useState("Click me");
   const [selected, setSelected] = useState<Option | Option[] | undefined>(
     undefined
@@ -104,4 +104,4 @@ const CheckboxPage: React.FC<ComponentProps> = (props: ComponentProps) => {
     </section>
   );
 };
-export default withPublicArea(CheckboxPage);
+export default withPublicArea(SelectPage);
