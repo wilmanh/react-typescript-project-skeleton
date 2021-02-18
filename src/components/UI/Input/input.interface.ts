@@ -1,4 +1,5 @@
 import { IconType } from "react-icons/lib";
+import { colors, inputStates, sizes } from "../../../utils/enum";
 
 export default interface InputProps {
   value: string;
@@ -6,26 +7,20 @@ export default interface InputProps {
   type?: "text" | "textarea" | "number" | "email";
   IconRight?: IconType;
   IconLeft?: IconType;
-  iconSize?: "is-small" | "is-normal" | "is-medium" | "is-large";
+  iconSize?: sizes;
   placeHolder?: string;
   rows?: number;
   fixed?: boolean;
-  color?:
-    | "is-primary"
-    | "is-link"
-    | "is-info"
-    | "is-success"
-    | "is-warning"
-    | "is-danger";
+  color?: colors;
   onChangeHandler: (
     event:
       | React.ChangeEvent<HTMLInputElement>
       | React.ChangeEvent<HTMLTextAreaElement>
   ) => void;
-  size?: "is-small" | "is-normal" | "is-medium" | "is-large";
+  size?: sizes;
   rounded?: boolean;
   disabled?: boolean;
-  readonly?: boolean;
-  state?: "is-hovered" | "is-focused" | "is-static";
+  readOnly?: boolean;
+  state?: inputStates;
   loading?: boolean;
 }

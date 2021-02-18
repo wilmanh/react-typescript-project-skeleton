@@ -7,7 +7,7 @@ import { RadioItem } from "../../components/UI/Radio/radio.interface";
 interface ComponentProps {
   someProps: boolean;
 }
-const CheckboxPage: React.FC<ComponentProps> = (props: ComponentProps) => {
+const RadioPage: React.FC<ComponentProps> = (props: ComponentProps) => {
   const [radioList, setRadioList] = useState<RadioItem[]>([
     { name: "1", checked: false, disabled: false },
     { name: "2", checked: false, disabled: false },
@@ -63,4 +63,4 @@ const CheckboxPage: React.FC<ComponentProps> = (props: ComponentProps) => {
     </section>
   );
 };
-export default withPublicArea(CheckboxPage);
+export default withPublicArea(RadioPage);

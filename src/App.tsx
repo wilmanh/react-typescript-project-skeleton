@@ -62,6 +62,17 @@ const App = (): JSX.Element => (
           <Route exact path="/radio" component={Routes.Radio} />
           <Route exact path="/checkbox" component={Routes.Checkbox} />
           <Route exact path="/upload" component={Routes.Upload} />
+          <Route exact path="/box" component={Routes.Box} />
+          <Route exact path="/content" component={Routes.Content} />
+          <Route exact path="/notification" component={Routes.Notification} />
+          <Route exact path="/progress-bar" component={Routes.ProgressBar} />
+          <Route exact path="/breadcrumb" component={Routes.Breadcrumb} />
+          <Route exact path="/tag" component={Routes.Tag} />
+          <Route
+            exact
+            path="/image-container"
+            component={Routes.ImageContainer}
+          />
         </Switch>
       </BrowserRouter>
     </PersistGate>

@@ -9,17 +9,12 @@ const UploadFile: React.FC<UploadProps> = (props: UploadProps) => {
     iconSize,
     size,
     fullwidth,
-    outlined,
-    inverted,
-    rounded,
     className,
     type,
-    light,
     label,
     boxed,
     hasFileName,
     align,
-    expand,
     name,
     value,
     onChangeHandler,
@@ -47,21 +42,6 @@ const UploadFile: React.FC<UploadProps> = (props: UploadProps) => {
   }
   if (fullwidth) {
     styles.push("is-fullwidth");
-  }
-  if (outlined) {
-    styles.push("is-outlined");
-  }
-  if (inverted) {
-    styles.push("is-inverted");
-  }
-  if (expand) {
-    styles.push("is-fullwidth");
-  }
-  if (light) {
-    styles.push("is-light");
-  }
-  if (rounded) {
-    styles.push("is-rounded");
   }
   if (Icon) {
     const iconStyles: string[] = ["icon"];

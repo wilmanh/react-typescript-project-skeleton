@@ -19,5 +19,9 @@
   },
   "select": {
     "placeholder": "Seleccione..."
+  },
+  "notification": {
+    "title": "Notification",
+    "subtitle": "Bold notification blocks, to alert your users of something"
   }
 }

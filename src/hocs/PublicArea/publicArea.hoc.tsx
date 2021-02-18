@@ -13,6 +13,7 @@ import Footer from "../../components/UI/Footer/footer.component";
 import { MenuOption } from "../../components/UI/NavBar/navBar.interface";
 import { withTranslation, WithTranslation } from "react-i18next";
 import parse from "html-react-parser";
+import options from "./options.menu";
 
 const mapStateToProps = (state: RootState) => ({});
 
@@ -45,51 +46,6 @@ export const withPublicArea = <BaseProps extends {}>(
       collapsed: false,
     };
 
-    static options: MenuOption[] = [
-      {
-        name: "Home",
-        toUrl: "/",
-      },
-      {
-        name: "Component",
-        options: [
-          {
-            name: "Buttons",
-            toUrl: "/button",
-            hasDivider: true,
-          },
-          {
-            name: "Inputs",
-            toUrl: "/input",
-            hasDivider: true,
-          },
-          {
-            name: "Select",
-            toUrl: "/select",
-            hasDivider: true,
-          },
-          {
-            name: "Checkbox",
-            toUrl: "/checkbox",
-            hasDivider: true,
-          },
-          {
-            name: "Radio",
-            toUrl: "/radio",
-            hasDivider: true,
-          },
-          {
-            name: "File upload",
-            toUrl: "/upload",
-            hasDivider: true,
-          },
-          {
-            name: "TextArea",
-            toUrl: "/textarea",
-          },
-        ],
-      },
-    ];
     static displayName = `withConnectedCount(${BaseComponent.name})`;
     // reference to original wrapped component
     static readonly WrappedComponent = BaseComponent;
@@ -117,11 +73,12 @@ export const withPublicArea = <BaseProps extends {}>(
             title="Sirius"
             hasLogin={false}
             hasSignUp={false}
-            options={Hoc.options}
+            options={options}
             key="navbar"
           />
           <BaseComponent
             login={this.login}
+            t={t}
             overrideCount={overrideCount} // injected
             {...(children as BaseProps)}
           />

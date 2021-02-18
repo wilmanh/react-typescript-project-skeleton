@@ -1,2 +1,6 @@
 // Import only what you need from Bulma
 @import "./../../../node_modules/bulma/bulma.sass";
+
+@import "./../../../node_modules/animate.css/animate.min.css";
+
+@import "./../../components/UI/Notification/notification.style.scss";

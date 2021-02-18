@@ -1,4 +1,5 @@
 import { IconType } from "react-icons/lib";
+import { align, buttonColors, sizes } from "../../../utils/enum";
 
 export default interface UploadProps {
   label: string;
@@ -8,28 +9,12 @@ export default interface UploadProps {
   Icon?: IconType;
   hasFileName?: boolean;
   boxed?: boolean;
-  expand?: boolean;
   name: string;
-  iconSize?: "is-small" | "is-normal" | "is-medium" | "is-large";
-  color?:
-    | "is-white"
-    | "is-dark"
-    | "is-black"
-    | "is-text"
-    | "is-ghost"
-    | "is-primary"
-    | "is-link"
-    | "is-info"
-    | "is-success"
-    | "is-warning"
-    | "is-danger";
+  iconSize?: sizes;
+  color?: buttonColors;
   onChangeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  size?: "is-small" | "is-normal" | "is-medium" | "is-large";
+  size?: sizes;
   fullwidth?: boolean;
-  outlined?: boolean;
-  inverted?: boolean;
-  rounded?: boolean;
   disabled?: boolean;
-  light?: boolean;
-  align?: "is-centered" | "is-right";
+  align?: align;
 }

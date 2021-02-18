@@ -6,7 +6,7 @@ import Checkbox from "../../components/UI/Checkbox/checkbox.component";
 interface ComponentProps {
   someProps: boolean;
 }
-const RadioPage: React.FC<ComponentProps> = (props: ComponentProps) => {
+const CheckboxPage: React.FC<ComponentProps> = (props: ComponentProps) => {
   const [toggle, setToggle] = useState<boolean>(false);
 
   return (
@@ -69,4 +69,4 @@ const RadioPage: React.FC<ComponentProps> = (props: ComponentProps) => {
     </section>
   );
 };
-export default withPublicArea(RadioPage);
+export default withPublicArea(CheckboxPage);
